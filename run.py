@@ -102,7 +102,7 @@ testY = []
 with open(os.getcwd()+'/NSL-KDD/KDDTest+.txt', newline='') as testData:
     testData = csv.reader(testData, delimiter=',')
     for row in testData:
-        all_test_data.append(row) # Duomenys nuskaitomi eilutė po eilutės
+        all_test_data.append(row) # Read data row by row
 print("[+] Testing data from NSL-KDD")
 print("--------------------------------------------------")
 print(all_test_data[0],"\n")
@@ -118,20 +118,20 @@ for i in all_test_data:
 
 print("[+] Encoded testing data")
 print("--------------------------------")
-print(testX[0],"\n")
+print(f"{testX[0]}\n")
 print("[+] Encoded cyber attack type (0-5)")
 print("----------------------------------------------")
-print(testY[0],"\n")
+print(f"{testY[0]}\n")
 
 # Data preprocessing
 trainX = Normalizer().fit_transform(trainX)
 print("\n[+] Transformed training data")
 print("-----------------------------------")
-print(trainX,"\n")
+print(f"{trainX}\n")
 testX = Normalizer().fit_transform(testX)
 print("[+] Transformed testing data")
 print("------------------------------------")
-print(testX,"\n")
+print(f"{testX}\n")
 
 # Data transformation to 3D array
 trainX = np.reshape(trainX, (trainX.shape[0], 1, trainX.shape[1]))
