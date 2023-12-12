@@ -187,7 +187,7 @@ history = model.fit(trainX, trainY,
 print("\n[+] Model testing")
 print("------------------------")
 _, score = model.evaluate(testX, testY, batch_size=16)
-print("\n[+] Modelio accuracy")
+print("\n[+] Model accuracy")
 print("-----------------------")
 print('Accuracy: %.2f' % (score*100)+"%")
 
